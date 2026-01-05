@@ -31,6 +31,72 @@ To write a Python program that uses **Hierarchical Inheritance** to input and di
 5. Display collected information using class methods.
 
 ## Program
-Add code here
+```
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_person(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+
+
+
+class Employee(Person):
+    def __init__(self, name, age, emp_id, salary):
+        super().__init__(name, age)
+        self.emp_id = emp_id
+        self.salary = salary
+
+    def display_employee(self):
+        self.display_person()
+        print("Employee ID:", self.emp_id)
+        print("Salary:", self.salary)
+
+
+
+class Patient(Person):
+    def __init__(self, name, age, patient_id, disease):
+        super().__init__(name, age)
+        self.patient_id = patient_id
+        self.disease = disease
+
+    def display_patient(self):
+        self.display_person()
+        print("Patient ID:", self.patient_id)
+        print("Disease:", self.disease)
+
+
+
+print("Enter Employee Details")
+ename = input("Name: ")
+eage = int(input("Age: "))
+eid = input("Employee ID: ")
+salary = float(input("Salary: "))
+
+emp = Employee(ename, eage, eid, salary)
+print("\nEmployee Details")
+emp.display_employee()
+
+
+print("\nEnter Patient Details")
+pname = input("Name: ")
+page = int(input("Age: "))
+pid = input("Patient ID: ")
+disease = input("Disease: ")
+
+pat = Patient(pname, page, pid, disease)
+print("\nPatient Details")
+pat.display_patient()
+
+
+```
 ## Sample Output
+<img width="1617" height="645" alt="image" src="https://github.com/user-attachments/assets/a11d6072-6696-49d8-84f9-8d683c0cc5bb" />
+
+##result
+the program is executed successfully
+
 
